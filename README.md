@@ -11,4 +11,4 @@ To get started:
 
 Then follow the on-screen instructions to set up your repo.
 
-This repo contains Sebastian Lopez's portfoilio and SPS projects
+This repo contains Sebastian Lopez's portfoilio and SPS projects.
