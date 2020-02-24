@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div id="content">
+    <audio id="sound">
+        <source src="audio/guitar.mp3" type="audio/mpeg">
+    </audio>
+    <p> Click to image to play the riff!</p>
+    <img src="images/guitar.jpeg" onclick="riffIt()">
+
+    <script>
+        function riffIt(){
+            var sound = document.getElementById("sound");
+            alert("prepare your ears!");
+            sound.play();
+        }
+    </script>
+    </div>
+  </body>
+</html>
