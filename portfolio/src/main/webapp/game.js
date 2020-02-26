@@ -25,10 +25,10 @@ function draw() {
     }
     window.addEventListener('keydown', function (event) {
       if(event.keyCode === 67) {
-          //When users press "c" key.
+          // When users press "c" key.
           colorStr = color[Math.floor(Math.random() * 7)];
       } else if(event.keyCode === 83) {
-          //When users press "s" key.
+          // When users press "s" key.
            factor = Math.random();
       }
     })
@@ -37,7 +37,6 @@ function draw() {
 }
 
 function drawStar(col) {
-    console.log("in draw star");
     ctx.fillStyle = col;
     ctx.beginPath();
     ctx.moveTo(x, y);
