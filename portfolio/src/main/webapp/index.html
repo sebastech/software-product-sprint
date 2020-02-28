@@ -16,8 +16,25 @@
       <p> Click <a href="riff.html">here</a> to hear my original guitar riff.</p>
       <p> I love building and playing games.  Click <a href="game.html">here</a> to try out a small interactive animation.</a><p>
       <p>Click here to see a msg:</p>
-      <button onclick="getRandomQuote()">display msg!</button>
+      <button onclick="displayMessage()">display msg!</button>
       <div id="msg"></div>
+
+      <form action="/data" method="POST">
+        <p>Enter a comment!</p>
+        <textarea name="text-input">example comment</textarea>
+        <br/><br/>
+
+        <!--
+        <p>Choose some options:</p>
+        <input type="checkbox" name="upper-case" value="true"> Upper-case
+        <br/>
+        <input type="checkbox" name="sort" value="true"> Alphabetize
+        <br/><br/>
+        -->
+
+        <input type="submit" />
+      </form>
+
     </div>
   </body>
 </html>

@@ -16,6 +16,8 @@ package com.google.sps.servlets;
 
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,10 +25,38 @@ import javax.servlet.http.HttpServletResponse;
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-
+  private ArrayList<String> comments;
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("text/html;");
     response.getWriter().println("Hello Sebastian!");
   }
+
+    @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+    // Get the input from the form.
+    String text = getParameter(request, "text-input", "");
+    //boolean upperCase = Boolean.parseBoolean(getParameter(request, "upper-case", "false"));
+    //boolean sort = Boolean.parseBoolean(getParameter(request, "sort", "false"));
+    // Convert the text to upper case.
+
+    comments = new ArrayList<String>();
+    comments.add(text);
+
+
+    // Respond with the result.
+    response.setContentType("text/html;");
+    response.getWriter().println(comments);
+    //response.sendRedirect(Request.UrlReferrer.ToString());
+  }
+
+  private String getParameter(HttpServletRequest request, String name, String defaultValue) {
+    String value = request.getParameter(name);
+    if (value == null) {
+      return defaultValue;
+    }
+    return value;
+  }
+
 }
