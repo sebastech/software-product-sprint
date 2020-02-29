@@ -12,7 +12,7 @@ function displayMessage() {
  * addQuoteToDom().
  */
 function handleResponse(response) {
-  console.log('Handling the response.');
+  //console.log('Handling the response.');
 
   // response.text() returns a Promise, because the response is a stream of
   // content and not a simple variable.
