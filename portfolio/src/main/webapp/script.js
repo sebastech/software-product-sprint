@@ -33,8 +33,8 @@ function addMsgToDOM(msg) {
 
 //JSON part:
 
-function getDataServletArray(){
-    fetch('/data').then(response => response.json()).then((obj) => {
+function getDataServletArray() {
+    fetch('/data').then(response => response.json()).then(obj => {
     // stats is an object, not a string, so we have to
     // reference its fields to create HTML content
 
