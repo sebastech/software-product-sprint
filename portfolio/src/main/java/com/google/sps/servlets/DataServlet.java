@@ -51,6 +51,16 @@ public class DataServlet extends HttpServlet {
     
    // response.sendRedirect("https://8080-dot-10910262-dot-devshell.appspot.com/?authuser=0&environment_id=default");
 
+    //IN HERE:
+
+    Entity taskEntity = new Entity("Task");
+    taskEntity.setProperty("comment", text);
+   // taskEntity.setProperty("timestamp", timestamp);
+
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    datastore.put(taskEntity);
+
+    response.sendRedirect("/index.html");
   }
 
   private String getParameter(HttpServletRequest request, String name, String defaultValue) {
