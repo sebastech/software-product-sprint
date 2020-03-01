@@ -21,15 +21,16 @@ import java.util.Arrays;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.concurrent.TimeUnit;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-  private ArrayList<String> comments;
+  private ArrayList<String> comments = new ArrayList<String>();
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("text/html;");
-    response.getWriter().println("Hello Sebastian!");
+    //response.getWriter().println("Hello Sebastian!");
   }
 
     @Override
@@ -41,14 +42,15 @@ public class DataServlet extends HttpServlet {
     //boolean sort = Boolean.parseBoolean(getParameter(request, "sort", "false"));
     // Convert the text to upper case.
 
-    comments = new ArrayList<String>();
     comments.add(text);
 
 
     // Respond with the result.
     response.setContentType("text/html;");
     response.getWriter().println(comments);
-    //response.sendRedirect(Request.UrlReferrer.ToString());
+    
+   // response.sendRedirect("https://8080-dot-10910262-dot-devshell.appspot.com/?authuser=0&environment_id=default");
+
   }
 
   private String getParameter(HttpServletRequest request, String name, String defaultValue) {
