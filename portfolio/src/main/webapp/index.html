@@ -1,43 +1,52 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>My Portfolio - Sebastian Lopez</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Synchronous Loading</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
   <body>
-    <div id="content">
-      <h1>Welcome to Sebatian's Shack</h1>
-      <p>Click on the links below to find out more about me!</p>
-      <p>Click <a href="background.html">here</a> to learn about my background</p>
-      <p>Click <a href="projects.html">here</a> to check out some of my projects</p>
-      <p>Check out my <a href="https://www.linkedin.com/in/sebastian-l-252686173/">LinkedIn</a>!</p>
-      <p> Click <a href="riff.html">here</a> to hear my original guitar riff.</p>
-      <p> I love building and playing games.  Click <a href="game.html">here</a> to try out a small interactive animation.</a><p>
-      <p>Click here to see a msg:</p>
-      <button onclick="displayMessage()">show comments!</button>
-      <div id="msg"></div>
+      <p> here is a cool map! </p>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBboscX4XmJst5P0Pd51X5opFvuEDcMPyQ"></script>
+    <script>
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8
+      });
+    </script>
+       <h1>Welcome to Sebatian's Shack</h1>
+    <p>Click on the links below to find out more about me!</p>
+    <p>Click <a href="background.html">here</a> to learn about my background</p>
+    <p>Click <a href="projects.html">here</a> to check out some of my projects</p>
+    <p>Check out my <a href="https://www.linkedin.com/in/sebastian-l-252686173/">LinkedIn</a>!</p>
+    <p> Click <a href="riff.html">here</a> to hear my original guitar riff.</p>
+    <p> I love building and playing games.  Click <a href="game.html">here</a> to try out a small interactive animation.</a><p>
+    <p>Click here to see a msg:</p>
+    <button onclick="displayMessage()">show comments!</button>
+    <div id="msg"></div>
 
-      <form action="/data" method="POST">
-        <p>Enter a comment!</p>
-        <textarea name="text-input"></textarea>
-        <br/><br/>
+    <form action="/data" method="POST">
+    <p>Enter a comment!</p>
+    <textarea name="text-input"></textarea>
+    <input type="submit" />
+    </form>
 
-        <!--
-        <p>Choose some options:</p>
-        <input type="checkbox" name="upper-case" value="true"> Upper-case
-        <br/>
-        <input type="checkbox" name="sort" value="true"> Alphabetize
-        <br/><br/>
-        -->
-
-        <input type="submit" />
-      </form>
-
-    </div>
   </body>
 </html>
-
-
-
